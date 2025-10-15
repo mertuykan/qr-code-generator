@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QR Kod Oluşturucu</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: #f0f2f5;
+    }
+    .container {
+        background: #fff;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        text-align: center;
+        width: 90%;
+        max-width: 400px;
+    }
+    input, select, button {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+        font-size: 16px;
+    }
+    button {
+        background: #007bff;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        font-weight: bold;
+    }
+    button:hover {
+        background: #0056b3;
+    }
+    img {
+        margin-top: 20px;
+        max-width: 100%;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h2>QR Kod Oluşturucu</h2>
+    <input type="text" id="text" placeholder="Metin veya URL girin">
+    <select id="color">
+        <option value="black">Siyah</option>
+        <option value="red">Kırmızı</option>
+        <option value="green">Yeşil</option>
+        <option value="blue">Mavi</option>
+        <option value="orange">Turuncu</option>
+    </select>
+    <button onclick="generateQR()">QR Kod Oluştur</button>
+    <br>
+    <img id="qrImage" src="" alt="" style="display:none;">
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
